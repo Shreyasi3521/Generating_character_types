@@ -29,10 +29,14 @@ def generate_stroke(i, n_i):
   return S_i
 ```
 Now to generate new character types :\
-The number of strokes in character is given by P(k). Now we have k.
 ```
-k <- P(k)
-for i in range(k):
-  ni <- P(ni|k)
-  
+def generate_type:
+ k <- P(k)
+ for i in range(k):
+   n_i <- P(n_i|k)
+   Si= generate_stroke(i, n_i)
+   𝜀_i <- P(𝜀_i)
+   R_i <- P(R_i | 𝜀_i, S_1, S_2,...,S_(i-1))
+ 𝜓 = { k, S, R}
+ return generate_token(𝜓)
 ```
