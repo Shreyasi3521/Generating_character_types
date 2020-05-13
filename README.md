@@ -6,16 +6,16 @@ Relations are of 4 types:
  - Along: R_i={𝜀_i = Along, u_i, v_i, t_i}\
  u_i is the stroke number selected at random from {1,2,...,i-1}\
  v_i is the sub-stroke number selected at random from {1,2,...,u_i}\
- t_i is the coordinate in the sub-stroke selected randomly\
+ t_i is the coordinate in the sub-stroke selected randomly
  - Independent: R_i={𝜀_i = Independent, J_i, L_i}\
  J_i <- P(J_i) where P(J_i) is a multinomial over 2D to select x coordinate of begining of new stroke\
- L_i <- P(L_i|J_i) to select y coordinate of begining of new stroke\
+ L_i <- P(L_i|J_i) to select y coordinate of begining of new stroke
  - End: R_i={𝜀_i = End, u_i}\
- u_i is the stroke number selected at random from {1,2,...,i-1}\
+ u_i is the stroke number selected at random from {1,2,...,i-1}
  - Start: R_i={𝜀_i = Start, u_i}\
- u_i is the stroke number selected at random from {1,2,...,i-1}\
+ u_i is the stroke number selected at random from {1,2,...,i-1}
 First to generate stroke:\
-We have i, ni.\
+We have i, ni.
 ```
 def generate_stroke(i, n_i):
   z_i_1 <- P(z_i_1)
@@ -28,7 +28,7 @@ def generate_stroke(i, n_i):
   S_i = {s_i_1,...,s_i_ni}
   return S_i
 ```
-Now to generate new character types :\
+Now to generate new character types :
 ```
 def generate_type:
  k <- P(k)
